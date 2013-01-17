@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>it.geobeyond</groupId>
+		<artifactId>geoavalanche</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<artifactId>webapp</artifactId>
+	<name>webapp</name>
+	<description>module for embedded geoserver webapp customization/testing</description>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.geoserver.web</groupId>
+			<artifactId>web-app</artifactId>
+			<version>2.3-SNAPSHOT</version>
+			<type>jar</type>
+		</dependency>
+
+		<!-- NOTA: Questo è un modulo provvisorio di test per le dipendenze -->
+		<!-- <dependency> -->
+		<!-- <groupId>it.geobeyond</groupId> -->
+		<!-- <artifactId>geoserver-hellorest</artifactId> -->
+		<!-- <version>1.0-SNAPSHOT</version> -->
+		<!-- </dependency> -->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8888</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+					<contextPath>/</contextPath>
+					<jvmArgs>-verbose:gc -Xms512m -Xmx1024m -XX:PermSize=256m
+						-XX:MaxPermSize=512m -DskipTests=true ${options}</jvmArgs>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<overlays>
+
+						<overlay>
+							<groupId>org.geoserver.web</groupId>
+							<artifactId>web-app</artifactId>
+							<type>jar</type>
+							<excludes>
+								<exclude>**/ftp-2.3-*</exclude>
+							</excludes>
+						</overlay>
+
+					</overlays>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+
+
+</project>

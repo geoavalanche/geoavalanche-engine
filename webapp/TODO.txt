@@ -1,0 +1,17 @@
+
+
+_____________
+TODO: vedere quali servizi vanno disabilitati qui:
+
+Mapped URL path [/wcs] onto handler 'dispatcher'
+Mapped URL path [/wcs/**] onto handler 'dispatcher'
+Mapped URL path [/wms/*] onto handler 'dispatcher'
+Mapped URL path [/wms] onto handler 'dispatcher'
+Mapped URL path [/kml] onto handler 'dispatcher'
+Mapped URL path [/kml/*] onto handler 'dispatcher'
+Mapped URL path [/animate] onto handler 'dispatcher'
+Mapped URL path [/animate/*] onto handler 'dispatcher'
+Mapped URL path [/gwc/service/**] onto handler 'dispatcher'
+Mapped URL path [/wfs/*] onto handler 'dispatcher'
+Mapped URL path [/TestWfsPost] onto handler 'wfsTestServlet'
+Mapped URL path [/wfs] onto handler 'dispatcher'
