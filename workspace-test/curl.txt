@@ -1,0 +1,47 @@
+# TODO: 
+il workspace non deve chiamarsi caaml ma geoavalanche?
+# TODO:
+scrivere esempi da postare qui: (java/scala)
+http://docs.geoserver.org/stable/en/user/restconfig/rest-config-examples/rest-config-examples-java.html
+
+
+# VEDI:
+http://docs.geoserver.org/latest/en/user/restconfig/rest-config-examples/rest-config-examples-curl.html
+http://docs.geoserver.org/stable/en/user/restconfig/rest-config-api.html
+
+# creazione NAMESPACE per il WORKSPACE
+curl -u admin:geoserver -v -XPOST -H 'Content-type: text/xml' -d '<workspace><name>caaml</name></workspace>' http://localhost:8888/rest/workspaces
+
+# lettura dettagli del namespace
+curl -u admin:geoserver -XGET -H 'Accept: text/xml' http://localhost:8888/rest/workspaces/caaml
+
+# definizione nuovo DATASTORE
+curl -u admin:geoserver -XPOST -T ESEMPI/caaml/caaml_datastore.xml -H 'Content-type: text/xml' http://localhost:8888/rest/workspaces/caaml/datastores
+
+# aggiunta nuova FEATURE
+# NOTA: il nome della featureType deve corrispondere alla tabella sul db
+curl -u admin:geoserver -XPOST -H 'Content-type: text/xml' -d '<featureType><name>caaml_bulletin</name></featureType>' http://localhost:8888/rest/workspaces/caaml/datastores/caaml/featuretypes
+# lettura feature aggiunta
+curl  -u admin:geoserver -XGET http://localhost:8888/rest/workspaces/caaml/datastores/caaml/featuretypes/caaml_bulletin.xml
+
+
+# aggiunta feature + tabella (ES: una tabella "annotations")
+curl -u admin:geoserver -XPOST -T ESEMPI/caaml/annotations.xml -H 'Content-type: text/xml' http://localhost:8888/rest/workspaces/caaml/datastores/nyc/featuretypes
+
+
+# LAYERS ----------------------------------------------------------------
+# aggiunta stili (dovremmo definire i file .sld...)
+curl -u admin:geoserver -XPUT -H 'Content-type: application/vnd.ogc.sld+xml' -d @caaml_bulletin.sld http://localhost:8888/rest/styles/caaml_bulletin
+
+#aggiunta Layer
+curl -u admin:geoserver -XPOST -d @ESEMPI/caaml/caaml_layerGroup.xml -H 'Content-type: text/xml' http://localhost:8888/rest/layergroups
+
+
+# -------------------------------------
+
+# Lista bullettin in JSON:
+curl -X GET "http://localhost:8888/caaml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=caaml:caaml_bulletin&maxFeatures=50&outputFormat=application/json"
+
+
+
+

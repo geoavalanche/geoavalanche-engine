@@ -1,0 +1,10 @@
+Questo modulo serve per realizzare dei test utili alla creazione del workspace.
+
+
+aggiunta JWebUnit per i test (si possono validare anche form e behaviour)
+
+VEDI:
+http://code.google.com/p/geoserver-manager/
+
+VEDI:
+http://augusttown.blogspot.it/2010/01/extend-geosever-with-customized-ows.html

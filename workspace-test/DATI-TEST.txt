@@ -1,0 +1,10 @@
+
+VEDI per la creazione del db di prova:
+http://workshops.opengeo.org/postgis-intro/creating_db.html
+http://docs.geoserver.org/stable/en/user/gettingstarted/postgis-quickstart/index.html
+
+i dati sono reperibili qui:
+http://docs.geoserver.org/stable/en/user/_downloads/nyc_buildings.zip
+http://docs.geoserver.org/stable/en/user/gettingstarted/postgis-quickstart/index.html
+
+

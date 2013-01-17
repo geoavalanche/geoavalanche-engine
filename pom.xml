@@ -11,14 +11,18 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<!-- <module>OOP-test</module> -->
-		<!-- <module>geoserver-hellorest</module> -->
-		<!-- <module>embedded-webapp</module> -->
-		<!-- <module>workspace-test</module> -->
 		<module>webapp</module>
 		<module>hellorest</module>
+		<module>workspace-test</module>
 	</modules>
 
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
