@@ -9,6 +9,7 @@
 *.db
 
 target
+bin
 src/main/webapp/DATA
 *.settings
 *.project

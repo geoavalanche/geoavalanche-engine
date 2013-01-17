@@ -16,6 +16,7 @@
 		<!-- <module>embedded-webapp</module> -->
 		<!-- <module>workspace-test</module> -->
 		<module>webapp</module>
+		<module>hellorest</module>
 	</modules>
 
 
