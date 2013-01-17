@@ -1,0 +1,8 @@
+NOTA: questo è un modulo di esempio, da rimuovere
+
+
+
+
+ESEMPI
+http://mockrunner.sourceforge.net/examplesjdbc.html
+http://mockrunner.sourceforge.net/examples.html

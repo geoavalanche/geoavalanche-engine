@@ -1,0 +1,8 @@
+http://localhost:8888/rest/services/wfs/settings
+
+VEDI:
+http://docs.geoserver.org/latest/en/developer/programming-guide/ows-services/implementing.html
+
+RIVEDERE?
+http://geoserver.org/display/GEOS/GSIP+76+-+Extend+REST+API+to+configure+settings+and+OWS+services
+http://localhost:8888/ows?request=sayHello&service=hello&version=1.0.0
