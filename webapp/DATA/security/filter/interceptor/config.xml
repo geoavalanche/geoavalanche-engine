@@ -1,0 +1,7 @@
+<securityInterceptor>
+  <id>-58ee03e1:13c7eef9d7f:-7fee</id>
+  <name>interceptor</name>
+  <className>org.geoserver.security.filter.GeoServerSecurityInterceptorFilter</className>
+  <allowIfAllAbstainDecisions>false</allowIfAllAbstainDecisions>
+  <securityMetadataSource>geoserverMetadataSource</securityMetadataSource>
+</securityInterceptor>

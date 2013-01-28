@@ -1,0 +1,1 @@
+http://localhost:8888/ows?request=sayHello&service=hello&version=1.0.0
