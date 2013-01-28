@@ -11,27 +11,31 @@
 	<artifactId>hellorest</artifactId>
 	<name>hellorest</name>
 	<description>module for testing REST services</description>
-
+	
+	<properties>
+		<geoserver.version>2.3-SNAPSHOT</geoserver.version>
+	</properties>
+	
 	<dependencies>
 		
 		<dependency>
 			<groupId>org.geoserver</groupId>
 			<artifactId>main</artifactId>
-			<version>2.3-SNAPSHOT</version>
+			<version>${geoserver.version}</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.geoserver</groupId>
 			<artifactId>rest</artifactId>
-			<version>2.3-SNAPSHOT</version>
+			<version>${geoserver.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.geoserver</groupId>
-			<artifactId>main</artifactId>
-			<version>2.3-SNAPSHOT</version>
-			<classifier>tests</classifier>
-			<scope>test</scope>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.geoserver</groupId> -->
+<!-- 			<artifactId>main</artifactId> -->
+<!-- 			<version>${geoserver.version}</version> -->
+<!-- 			<classifier>tests</classifier> -->
+<!-- 			<scope>test</scope> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
