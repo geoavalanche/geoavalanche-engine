@@ -1,0 +1,30 @@
+# VEDI:
+# http://docs.geoserver.org/latest/en/user/restconfig/rest-config-examples/rest-config-examples-curl.html
+
+# creazione NAMESPACE
+curl -u admin:geoserver -v -XPOST -H 'Content-type: text/xml' -d '<workspace><name>NYC</name></workspace>' http://localhost:8888/rest/workspaces
+
+# lettura dettagli del namespace
+curl -u admin:geoserver -XGET -H 'Accept: text/xml' http://localhost:8888/rest/workspaces/NYC
+
+# definizione nuovo DATASTORE
+curl -u admin:geoserver -XPOST -T ESEMPI/NYC/nycDatastore.xml -H 'Content-type: text/xml' http://localhost:8888/rest/workspaces/NYC/datastores
+
+# aggiunta nuova FEATURE
+# NOTA: il nome della featureType deve corrispondere alla tabella sul db
+curl -u admin:geoserver -XPOST -H 'Content-type: text/xml' -d '<featureType><name>nyc_buildings</name></featureType>' http://localhost:8888/rest/workspaces/NYC/datastores/nyc/featuretypes
+# lettura feature aggiunta
+curl  -u admin:geoserver -XGET http://localhost:8888/rest/workspaces/NYC/datastores/nyc/featuretypes/ncy_buildings.xml
+
+
+# aggiunta feature + tabella
+curl -u admin:geoserver -XPOST -T ESEMPI/NYC/annotations.xml -H 'Content-type: text/xml' http://localhost:8888/rest/workspaces/NYC/datastores/nyc/featuretypes
+
+
+# LAYERS ----------------------------------------------------------------
+# aggiunta stili (dovremmo definire i file .sld...)
+curl -u admin:geoserver -XPUT -H 'Content-type: application/vnd.ogc.sld+xml' -d @buildings.sld http://localhost:8888/rest/styles/buildings_style
+curl -u admin:geoserver -XPUT -H 'Content-type: application/vnd.ogc.sld+xml' -d @parks.sld http://localhost:8888/rest/styles/parks_style
+
+#aggiunta Layer
+curl -u admin:geoserver -XPOST -d @ESEMPI/NYC/nycLayerGroup.xml -H 'Content-type: text/xml' http://localhost:8888/rest/layergroups

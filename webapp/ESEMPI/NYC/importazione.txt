@@ -1,0 +1,2 @@
+createdb -T template_postgis nyc
+psql -f nyc_buildings.sql nyc

@@ -1,0 +1,41 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-4ca6bcf3:13c7f39bc83:-7ff5</id>
+  <name>caaml_region</name>
+  <nativeName>caaml_region</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-4ca6bcf3:13c7f39bc83:-7fff</id>
+  </namespace>
+  <title>caaml_region</title>
+  <keywords>
+    <string>features</string>
+    <string>caaml_region</string>
+  </keywords>
+  <srs>EPSG:2398</srs>
+  <nativeBoundingBox>
+    <minx>49.903033</minx>
+    <maxx>51.903033</maxx>
+    <miny>50.057128</miny>
+    <maxy>52.057128</maxy>
+    <crs class="projected">EPSG:2398</crs>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-25.408219831904155</minx>
+    <maxx>-25.408205620318085</maxx>
+    <miny>-5.566360004164608E-4</miny>
+    <maxy>-5.422925103065352E-4</maxy>
+    <crs>GEOGCS[&quot;WGS84(DD)&quot;, 
+  DATUM[&quot;WGS84&quot;, 
+    SPHEROID[&quot;WGS84&quot;, 6378137.0, 298.257223563]], 
+  PRIMEM[&quot;Greenwich&quot;, 0.0], 
+  UNIT[&quot;degree&quot;, 0.017453292519943295], 
+  AXIS[&quot;Geodetic longitude&quot;, EAST], 
+  AXIS[&quot;Geodetic latitude&quot;, NORTH]]</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-4ca6bcf3:13c7f39bc83:-7ffe</id>
+  </store>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+</featureType>

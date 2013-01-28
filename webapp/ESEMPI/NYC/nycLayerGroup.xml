@@ -1,0 +1,13 @@
+<layerGroup>
+	<name>nyc</name>
+	<layers>
+		<layer>roads</layer>
+		<layer>parks</layer>
+		<layer>buildings</layer>
+	</layers>
+	<styles>
+		<style>roads_style</style>
+		<style>parks</style>
+		<style>buildings_style</style>
+	</styles>
+</layerGroup>

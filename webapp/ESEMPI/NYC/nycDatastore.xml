@@ -1,0 +1,12 @@
+<dataStore>
+	<name>nyc</name>
+	<connectionParameters>
+		<host>localhost</host>
+		<port>5432</port>
+		<database>nyc</database>
+		<schema>public</schema>
+		<user>postgres</user>
+		<password>postgres</password>
+		<dbtype>postgis</dbtype>
+	</connectionParameters>
+</dataStore>

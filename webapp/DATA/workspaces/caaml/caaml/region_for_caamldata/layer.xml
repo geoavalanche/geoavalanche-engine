@@ -1,0 +1,13 @@
+<layer>
+  <name>region_for_caamldata</name>
+  <id>LayerInfoImpl-4ca6bcf3:13c7f39bc83:-7fec</id>
+  <type>VECTOR</type>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-4ca6bcf3:13c7f39bc83:-7fed</id>
+  </resource>
+  <enabled>true</enabled>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

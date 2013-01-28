@@ -1,0 +1,11 @@
+<layerGroup>
+	<name>caaml</name>
+	<layers>
+		<layer>caaml_region</layer>
+		<layer>caaml_bulletin</layer>
+	</layers>
+	<styles>
+		<style>caaml_region_style</style>
+		<style>caaml_bulletin_style</style>
+	</styles>
+</layerGroup>

@@ -3,14 +3,10 @@ il workspace non deve chiamarsi caaml ma geoavalanche?
 # TODO:
 scrivere esempi da postare qui: (java/scala)
 http://docs.geoserver.org/stable/en/user/restconfig/rest-config-examples/rest-config-examples-java.html
-http://docs.geoserver.org/2.2.4/user/restconfig/rest-config-examples/rest-config-examples-java.html
-http://docs.geoserver.org/2.2.4/user/restconfig/rest-config-examples/rest-config-examples-curl.html
-
 
 
 # VEDI:
-http://docs.geoserver.org/latest/en/user/restconfig/rest-config-examples/rest-config-examples-curl.html
-http://docs.geoserver.org/stable/en/user/restconfig/rest-config-api.html
+# http://docs.geoserver.org/latest/en/user/restconfig/rest-config-examples/rest-config-examples-curl.html
 
 # creazione NAMESPACE per il WORKSPACE
 curl -u admin:geoserver -v -XPOST -H 'Content-type: text/xml' -d '<workspace><name>caaml</name></workspace>' http://localhost:8888/rest/workspaces
@@ -34,7 +30,7 @@ curl -u admin:geoserver -XPOST -T ESEMPI/caaml/annotations.xml -H 'Content-type:
 
 # LAYERS ----------------------------------------------------------------
 # aggiunta stili (dovremmo definire i file .sld...)
-curl -u admin:geoserver -XPUT -H 'Content-type: application/vnd.ogc.sld+xml' -d @ESEMPI/caaml/caaml_bulletin.sld http://localhost:8888/rest/styles/caaml_bulletin
+curl -u admin:geoserver -XPUT -H 'Content-type: application/vnd.ogc.sld+xml' -d @caaml_bulletin.sld http://localhost:8888/rest/styles/caaml_bulletin
 
 #aggiunta Layer
 curl -u admin:geoserver -XPOST -d @ESEMPI/caaml/caaml_layerGroup.xml -H 'Content-type: text/xml' http://localhost:8888/rest/layergroups

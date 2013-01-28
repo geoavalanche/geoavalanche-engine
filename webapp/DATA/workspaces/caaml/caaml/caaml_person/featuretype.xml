@@ -1,0 +1,26 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-4ca6bcf3:13c7f39bc83:-7ff7</id>
+  <name>caaml_person</name>
+  <nativeName>caaml_person</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-4ca6bcf3:13c7f39bc83:-7fff</id>
+  </namespace>
+  <title>caaml_person</title>
+  <keywords>
+    <string>caaml_person</string>
+    <string>features</string>
+  </keywords>
+  <nativeBoundingBox>
+    <minx>0.0</minx>
+    <maxx>-1.0</maxx>
+    <miny>0.0</miny>
+    <maxy>-1.0</maxy>
+  </nativeBoundingBox>
+  <projectionPolicy>NONE</projectionPolicy>
+  <enabled>true</enabled>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-4ca6bcf3:13c7f39bc83:-7ffe</id>
+  </store>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+</featureType>
