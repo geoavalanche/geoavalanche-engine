@@ -1,0 +1,20 @@
+<dataStore>
+  <id>caaml_datastore</id>
+  <name>caaml</name>
+  <type>PostGIS</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>caaml_workspace</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="schema">public</entry>
+    <entry key="port">5432</entry>
+    <entry key="dbtype">postgis</entry>
+    <entry key="host">localhost</entry>
+    <entry key="password">postgres</entry>
+    <entry key="user">postgres</entry>
+    <entry key="database">caaml_db</entry>
+    <entry key="namespace">http://caaml</entry>
+  </connectionParameters>
+  <__default>false</__default>
+</dataStore>

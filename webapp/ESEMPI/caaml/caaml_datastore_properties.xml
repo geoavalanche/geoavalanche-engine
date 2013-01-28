@@ -1,0 +1,17 @@
+<dataStore>
+	<name>caaml</name>
+	<connectionParameters>
+		<entry key="schema">${caaml.schema}</entry>
+		<entry key="port">${caaml.port}</entry>
+		<entry key="dbtype">${caaml.dbtype}</entry>
+		<entry key="host">${caaml.host}</entry>
+		<entry key="password">${caaml.password}</entry>
+		<entry key="user">${caaml.user}</entry>
+		<entry key="database">${caaml.database}</entry>
+		<entry key="namespace">${caaml.host}</entry>
+	</connectionParameters>
+</dataStore>
+<!-- 
+NOTE:
+this file could be used as a base for create the workspace skeleton via the rest interface.
+-->

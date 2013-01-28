@@ -1,0 +1,3 @@
+
+Interpolation of properties:
+http://docs.geoserver.org/2.2.4/user/data/app-schema/property-interpolation.html#example-of-property-interpolation
