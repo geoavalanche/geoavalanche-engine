@@ -1,0 +1,23 @@
+
+Lista dei servizi caaml
+http://localhost:8888/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType&outputFormat=application/json
+
+
+----------------------------------------------
+PROBLEMI
+----------------------------------------------
+
+TODO: rivedere casi del genere:
+curl -X GET "http://localhost:8888/ows?request=GetCapabilities&service=wfs&version=1.0.0"
+
+...<ServiceException>java.io.IOException null Translator error null</ServiceException>
+
+
+http://localhost:8888/ows?service=WFS&version=1.1.0&request=GetCapabilities
+http://localhost:8888/caaml/wfs?request=GetCapabilities
+
+VEDI su questo:
+https://groups.google.com/a/opengeo.org/forum/?fromgroups=#!topic/geonode-dev/4dCRcnMfZRA
+
+
+
