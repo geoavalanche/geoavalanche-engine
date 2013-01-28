@@ -23,19 +23,19 @@
 			<artifactId>main</artifactId>
 			<version>${geoserver.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.geoserver</groupId>
+			<artifactId>main</artifactId>
+			<version>${geoserver.version}</version>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.geoserver</groupId>
 			<artifactId>rest</artifactId>
 			<version>${geoserver.version}</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.geoserver</groupId> -->
-<!-- 			<artifactId>main</artifactId> -->
-<!-- 			<version>${geoserver.version}</version> -->
-<!-- 			<classifier>tests</classifier> -->
-<!-- 			<scope>test</scope> -->
-<!-- 		</dependency> -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
