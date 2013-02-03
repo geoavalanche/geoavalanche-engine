@@ -1,0 +1,121 @@
+
+Extend GeoServer with customized OWS service
+part 1
+http://augusttown.blogspot.it/2010/01/extend-geosever-with-customized-ows.html
+part 2
+http://augusttown.blogspot.it/2010/01/extend-geoserver-with-customized-ows_7162.html
+part 3
+http://augusttown.blogspot.it/2010/01/extend-geoserver-with-customized-ows_08.html
+part 4
+http://augusttown.blogspot.it/2010/01/extend-geoserver-with-customized-ows_09.html
+part 5
+http://augusttown.blogspot.it/2010/01/extend-geoserver-with-customized-ows_12.html
+
+recognized/accepted parameters:
+	- bbox
+	- layers
+	- size
+	- imageSR
+	- transparent
+optional parameters (with hardcoded defaults):
+	- format = "image/png”
+	- bboxSR = 4326
+	- dpi = 96
+	
+	
+#### add maven dependency for geoserver webapp (see embedded webapp module)
+#### define a new module for the ows service extension
+
+#### custom ows service
+
+#### create application context (applicationContext.xml);
+si può utilizzare il dispatcher standard org.geoserver.ows.Dispatcher: il nuovo servizio verrà infatti gestito parametricamente.
+
+#### reuse org.geoserver.ows.Dispatcher to dispatch the request to "ags-ows" service;
+
+da spring il context è mappato come segue:
+
+/ows		dispatcher
+/ows/**		dispatcher
+/styles/**	filePublisher
+/www/**"	filePublisher
+
+#### create a class representing the ows-geoserver service, which declares all the supported operations as its methods.
+La definizione del bean relativo verrà aggiunta nel file applicationContext.xml, passando ad esso la injection per il bean di geoserver.
+La definizione invece del bean principale per il servizio vero e proprio (di tipo org.geoserver.platform.Service) utilizza i parametri per il costruttore:
+	- agsows (nome servizio)
+	- reference ArcGISServerOWSService bean
+	- version" (1.0.0)
+	- operations/methods list (Export)
+
+TEST:
+curl -XGET http://localhost:8888/ows?service=agsows&request=export&bbox=-115.8,30.4,-85.5,50.5&bboxSR=4326&layers=show:0,1,2&size=800,600&imageSR=4326&transparent=true 
+
+#### extend org.geoserver.ows.KvpParser to parse request parameter
+
+org.geoserver.ows.kvp.BooleanKvpParser
+org.geoserver.wfs.kvp.BBoxKvpParser
+AgsOwsKvpLayersParser
+	comma separated layer list into an array of GeoServer LayerInfo. 
+
+
+#### request bean (AgsOwsExportRequest)
+
+
+
+#### extend org.geoserver.ows.KvpRequestReader to deal with "ags-ows" service requests;
+
+#### extend org.geoserver.ows.Response to handle "ags-ows" service responses.
+bisogna implementare due metodi:
+- getMimeType() (usato nell'header della risposta)
+- write() (usato per produrre il corpo della risposta da spedire al client)
+
+NOTA:
+dai metodi su possono restituire tipi a piacere, non necessarimente oggetti di tipo AgsOwsExportResponse.
+Si veda ad esempio il tipo:
+org.geoserver.wcs.responses.GetCapabilitiesResponse
+Si veda invece come esempio di response per mappe:
+org.vfny.geoserver.wms.responses.GetMapResponse
+
+ESEMPIO static content:
+@Override
+public void write(Object value, OutputStream output, Operation operation)
+		throws IOException, ServiceException {
+	String responseStr = "Static content";
+	OutputStreamWriter writer = new OutputStreamWriter(output);
+	writer.write(responseStr);
+	writer.flush();
+}
+
+---------
+
+
+
+NOTA: per garantire l'aggiornamento alle utlime versioni, eseguire sempre un mvn install / mvn package sul modulo del servizio
+
+
+---------
+
+
+PROBLEMI PASSO-PASSO:
+1) implementato lo stub di servizio, manca il parser delle request:
+Could not find request reader (either kvp or xml) for: org.geoserver.ows.arcgisserver.AgsOwsExportRequest
+
+2) implementato il parser di request, manca un oggetto response opportuno:
+java.lang.RuntimeException: No response: ( object = class org.geoserver.ows.arcgisserver.AgsOwsExportResponse ) No response: ( object = class org.geoserver.ows.arcgisserver.AgsOwsExportResponse )
+
+3) implementando response, bisogna usare bene i metodi
+ad esempio con:
+http://localhost:8888/ows?service=agsows&version=1.0.0&request=capabilities
+Could not get a ServiceInfo for service agsows thus could not check if the service is enabled
+org.geoserver.platform.ServiceException: No such operation agsows 1.0.0 capabilities
+
+
+
+
+
+
+
+
+
+

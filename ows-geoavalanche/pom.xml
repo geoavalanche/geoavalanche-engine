@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>it.geobeyond</groupId>
+    <artifactId>geoavalanche</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ows-geoavalanche</artifactId>
+  
+  <properties>
+  	<geoserver.version>2.3-SNAPSHOT</geoserver.version>
+  	<geotools.version>10-SNAPSHOT</geotools.version>
+  </properties>
+	
+	<dependencies>
+		
+		<dependency>
+			<groupId>org.geoserver</groupId>
+			<artifactId>main</artifactId>
+			<version>${geoserver.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.geoserver</groupId>
+			<artifactId>main</artifactId>
+			<version>${geoserver.version}</version>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.geoserver</groupId>
+			<artifactId>ows</artifactId>
+			<version>${geoserver.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.geoserver</groupId>
+			<artifactId>wms</artifactId>
+			<version>${geoserver.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.geoserver</groupId>
+			<artifactId>wfs</artifactId>
+			<version>${geoserver.version}</version>
+		</dependency>
+		
+		<!-- RIVEDERE per geotools -->
+		<dependency>
+			<groupId>org.geotools</groupId>
+			<artifactId>gt-render</artifactId>
+			<version>${geotools.version}</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.geotools</groupId> -->
+<!-- 			<artifactId>gt-shapefile-render</artifactId> -->
+<!-- 			<version>8.0]</version> -->
+<!-- 		</dependency> -->
+		
+		<dependency>
+			<groupId>org.geoserver</groupId>
+			<artifactId>rest</artifactId>
+			<version>${geoserver.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mockrunner</groupId>
+			<artifactId>mockrunner</artifactId>
+			<version>0.3.1</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+  
+	<repositories>
+		<repository>
+		    <id>maven2-repository.dev.java.net</id>
+		    <name>Java.net repository</name>
+		    <url>http://download.java.net/maven/2</url>
+		</repository>
+		<repository>
+		    <id>osgeo</id>
+		    <name>Open Source Geospatial Foundation Repository</name>
+		    <url>http://download.osgeo.org/webdav/geotools/</url>
+		</repository>
+	</repositories>
+  
+</project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="ags-ows" class="org.geoserver.ows.arcgisserver.ArcGISServerOWSService">
+		<constructor-arg ref="geoServer" />
+	</bean>
+	
+	<bean id="ags-ows-1.0.0" class="org.geoserver.platform.Service">
+		<constructor-arg index="0" value="agsows" />
+		<constructor-arg index="1" ref="ags-ows" />
+		<constructor-arg index="2" value="1.0.0" />
+		<constructor-arg index="3">
+		<!-- operations/methods list -->
+			<list>
+<!-- 				<value>Export</value> -->
+				<value>capabilities</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="agsOwsExportKvpRequestReader" class="org.geoserver.ows.arcgisserver.AgsOwsExportRequestKvpReader">
+	</bean>
+ 
+	<!-- service operation response -->
+	<bean id="agsOwsCapabilitiesResponse" class="org.geoserver.ows.arcgisserver.AgsOwsCapabilitiesResponse" singleton="false">
+<!-- 		<constructor-arg ref="geoServer"/> -->
+	</bean>
+</beans>

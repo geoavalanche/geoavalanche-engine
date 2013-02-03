@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+	<!-- custom OWS -->
+	<bean id="ags-ows" class="org.geoserver.ows.arcgisserver.ArcGISServerOWSService">
+		<constructor-arg ref="geoServer" />
+	</bean>
+	<bean id="ags-ows-1.0.0" class="org.geoserver.platform.Service">
+		<constructor-arg index="0" value="agsows" />
+		<constructor-arg index="1" ref="ags-ows" />
+		<constructor-arg index="2" value="1.0.0" />
+		<constructor-arg index="3">
+			<list>
+				<value>Export</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean class="kvpparser_class_name" id="kvpparser_id">
+		<constructor-arg index="0" value="agsows"/>
+		<constructor-arg index="1" value="1.0.0"/>
+	</bean>
+
+
+</beans>

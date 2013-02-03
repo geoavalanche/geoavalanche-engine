@@ -12,8 +12,9 @@
 
 	<modules>
 		<module>webapp</module>
-		<module>hellorest</module>
+		<module>hello</module>
 		<module>workspace-test</module>
+		<module>ows-geoavalanche</module>
 	</modules>
 
 	<dependencies>
