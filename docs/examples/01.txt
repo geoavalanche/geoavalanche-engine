@@ -1,0 +1,72 @@
+REQUEST
+http://localhost:8888/caaml/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=caaml:caaml_bulletin&maxFeatures=50&outputFormat=application/json
+
+
+RESPONSE
+{
+	"type":"FeatureCollection",
+	"features":[
+		{
+			"type":"Feature",
+			"id":"caaml_bulletin.fid--5a86662e_13df1b52898_-8000",
+			"geometry":null,
+			"properties":{
+				"id":1,
+				"id_metadata_operation":1,
+				"metadata_date_time_report":
+				"2010-01-07T06:30:00Z",
+				"metadata_comment":"Patrick Nairz",
+				"id_caaml_data":1,
+				"loc_ref":1,
+				"time_position":"2010-01-06T23:00:00Z",
+				"bbox":[-1,-1,0,0]
+			}
+		},
+		{
+			"type":"Feature",
+			"id":"caaml_bulletin.fid--5a86662e_13df1b52898_-7fff",
+			"geometry":null,
+			"properties":{
+				"id":1,
+				"id_metadata_operation":1,
+				"metadata_date_time_report":"2010-01-07T06:30:00Z",
+				"metadata_comment":"Patrick Nairz",
+				"id_caaml_data":1,
+				"loc_ref":1,
+				"time_position":
+				"2010-01-06T23:00:00Z",
+				"bbox":[-1,-1,0,0]
+			}
+		},
+		{
+			"type":"Feature",
+			"id":"caaml_bulletin.fid--5a86662e_13df1b52898_-7ffe",
+			"geometry":null,
+			"properties":{
+				"id":1,
+				"id_metadata_operation":1,
+				"metadata_date_time_report":"2010-01-07T06:30:00Z",
+				"metadata_comment":"Patrick Nairz",
+				"id_caaml_data":1,
+				"loc_ref":1,
+				"time_position":"2010-01-06T23:00:00Z",
+				"bbox":[-1,-1,0,0]
+			}
+		},
+		{
+			"type":"Feature",
+			"id":"caaml_bulletin.fid--5a86662e_13df1b52898_-7ffd",
+			"geometry":null,
+			"properties":{
+				"id":2,
+				"id_metadata_operation":1,
+				"metadata_date_time_report":"2012-11-26T13:43:01Z",
+				"metadata_comment":"Testo di Prova per il Bulletin.\nIl testo contiene anche un po' di <strong>html<\/strong>, per verificare se funziona.",
+				"id_caaml_data":1,
+				"loc_ref":1,
+				"time_position":"2012-11-26T13:43:21Z",
+				"bbox":[-1,-1,0,0]
+			}
+		}
+	]
+}
