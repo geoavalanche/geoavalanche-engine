@@ -3,28 +3,48 @@
 
 <beans>
 
-	<bean id="ags-ows" class="org.geoserver.ows.arcgisserver.ArcGISServerOWSService">
-		<constructor-arg ref="geoServer" />
-	</bean>
+<!-- NOTE: 
+i parametri vengono risolti automaticamente, non è indispensabile un ordine esatto
+-->
 	
 	<bean id="ags-ows-1.0.0" class="org.geoserver.platform.Service">
 		<constructor-arg index="0" value="agsows" />
-		<constructor-arg index="1" ref="ags-ows" />
-		<constructor-arg index="2" value="1.0.0" />
-		<constructor-arg index="3">
+		<constructor-arg index="1" value="http://www.geobeyond.it/agsows"/>
+		<constructor-arg index="2" ref="ags-ows" />
+		<constructor-arg index="3" value="1.0.0" />
+		<constructor-arg index="4">
 		<!-- operations/methods list -->
 			<list>
-<!-- 				<value>Export</value> -->
+				<value>Export</value>
 				<value>capabilities</value>
 			</list>
 		</constructor-arg>
 	</bean>
 	
+	<bean id="ags-ows" class="org.geoserver.ows.arcgisserver.ArcGISServerOWSService">
+		<constructor-arg ref="geoServer" />
+<!-- 		<property name="filterFactory" ref="filterFactory"/> -->
+<!-- 		<property name="interceptorNames"> -->
+<!-- 			<list> -->
+<!-- 				<value>wfsLogger</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+	</bean>
+	
+	
+	
+	<bean id="wfsLogger" class="org.geoserver.ows.util.EMFLogger">
+      <constructor-arg type="java.lang.String" value="org.geoserver.wfs"/>
+    </bean>
+		
+	
 	<bean id="agsOwsExportKvpRequestReader" class="org.geoserver.ows.arcgisserver.AgsOwsExportRequestKvpReader">
 	</bean>
  
 	<!-- service operation response -->
-	<bean id="agsOwsCapabilitiesResponse" class="org.geoserver.ows.arcgisserver.AgsOwsCapabilitiesResponse" singleton="false">
-<!-- 		<constructor-arg ref="geoServer"/> -->
+	<bean 
+		id="agsOwsCapabilitiesResponse" 
+		class="org.geoserver.ows.arcgisserver.AgsOwsCapabilitiesResponse" singleton="false">
+		<constructor-arg ref="geoServer"/>
 	</bean>
 </beans>

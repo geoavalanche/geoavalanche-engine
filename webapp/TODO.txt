@@ -1,5 +1,6 @@
 
-
+VEDI come template per la DATA dir gli esempi in:
+GEOSERVER_INSTALL/data/minimal
 _____________
 TODO: vedere quali servizi vanno disabilitati qui:
 
